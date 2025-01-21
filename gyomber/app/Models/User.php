@@ -12,6 +12,10 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    // Kapcsolatok
+
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +25,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'jogosultsag_azon',
     ];
 
     /**
@@ -44,5 +49,13 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+
+    
+    // Felhasználóhoz tartozó jogosultság
+    public function jogosultsag()
+    {
+        return $this->belongsTo(Jogosultsag::class, 'jogosultsag_azon', 'jog_azon');
     }
 }

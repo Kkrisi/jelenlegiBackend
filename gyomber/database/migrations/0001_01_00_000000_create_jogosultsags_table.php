@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jogosultsag', function (Blueprint $table) {
-            $table->tinyIncrements('jog_azon'); // Elsődleges kulcs jog_azon néven
+        Schema::create('jogosultsags', function (Blueprint $table) {
+            $table->id('jog_azon'); // Elsődleges kulcs jog_azon néven
             $table->string('megnevezes');
             $table->timestamps();
 

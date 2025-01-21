@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\felhasznalo;
+use App\Models\jogosultsag;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Support\Facades\Hash;
@@ -22,19 +23,34 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);*/
 
-        Felhasznalo::create([
+        /*
+        jogosultsag::create([
+            'jog_azon' => 1,
+            'megnevezes' => 'user', // Alapértelmezett felhasználói jogosultság
+        ]);
+
+        // Először szúrd be a szükséges jogosultságot a jogosultsags táblába
+        jogosultsag::create([
+            'jog_azon' => 3,
+            'megnevezes' => 'superadmin',
+        ]);*/
+
+        /*
+        // Ezután szúrj be felhasználókat
+        User::create([
             'email' => 'admin@gmail.com',
-            'jelszo' => Hash::make('adminpassword'), // Titkosított jelszó
-            'nev' => 'Admin User',
-            'jogosultsag_azon' => 3, // Admin jogosultság
-        ]);
-    
-        Felhasznalo::create([
+            'password' => Hash::make('adminpassword'),
+            'name' => 'Admin User',
+            'jogosultsag_azon' => 3, // Hivatkozás a 'superadmin' jogosultságra
+        ]);*/
+
+        
+        User::create([
             'email' => 'user@gmail.com',
-            'jelszo' => Hash::make('securepassword'),
-            'nev' => 'Test User',
-            // A 'jogosultsag_azon' mező itt kihagyható, mert alapértelmezetten 1 lesz
-            //'jogosultsag_azon' => 1, // Karbantartó jogosultság
+            'password' => Hash::make('securepassword'),
+            'name' => 'Test User',
+            'jogosultsag_azon' => 1, // Ha nem adsz meg jogosultságot, alapértelmezett lesz
         ]);
+
     }
 }

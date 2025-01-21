@@ -17,8 +17,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedBigInteger('jogosultsag_azon')->default(1); // Jogosultság 0-10 között
             $table->rememberToken();
             $table->timestamps();
+
+            //$table->check('jogosultsag_azon >= 0 AND jogosultsag_azon <= 10'); megszorítás hozzáadása
+        
+            $table->foreign('jogosultsag_azon')->references('jog_azon')->on('jogosultsags')->onDelete('cascade');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

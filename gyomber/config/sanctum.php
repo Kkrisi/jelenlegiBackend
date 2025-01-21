@@ -14,16 +14,13 @@ return [
     | and production domains which access your API via a frontend SPA.
     |
     */
-    // config/sanctum.php
-    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'localhost')),
 
-
-    /*'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', sprintf(
+    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', sprintf(
         '%s%s%s',
         'localhost,localhost:3000,127.0.0.1,127.0.0.1:3000,127.0.0.1:8000,::1',
         Sanctum::currentApplicationUrlWithPort(),
         env('FRONTEND_URL') ? ','.parse_url(env('FRONTEND_URL'), PHP_URL_HOST) : ''
-    ))),*/
+    ))),
 
     /*
     |--------------------------------------------------------------------------
