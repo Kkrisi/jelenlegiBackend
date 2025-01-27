@@ -15,7 +15,7 @@ return new class extends Migration
             $table->unsignedBigInteger('d_azon')->primary(); // Elsődleges kulcs d_azon néven
             $table->string('nev');
             $table->string('email')->unique();
-            $table->string('szul_nev');
+            $table->string('szul_nev');  
             $table->string('születesi_hely');
             $table->date('születesi_ido');
             $table->string('anyaja_neve');
