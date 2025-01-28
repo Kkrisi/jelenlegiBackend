@@ -78,4 +78,9 @@ class DolgozokController extends Controller
         return $query;
     }
 
+    public function adminTeszt()
+    {
+        $query = DB::table('users')->get();
+        return $query;
+    }
 }
