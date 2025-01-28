@@ -10,6 +10,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
         Route::get('/index', [DolgozokController::class, 'index']);
+        Route::get('/dolgozo-id-szures/{id}', [DolgozokController::class, 'DolgozoIdSzerint']);
         Route::get('/dolgozok-tobb-mint-egy', [DolgozokController::class, 'getDolgozokTobbMintEgyKuldottPdf']);
         Route::get('/dolgozok-utolso-kuldott-pdf-datum', [DolgozokController::class, 'getDolgozokUtolsoKuldottPdfDatum']);
         Route::get('/dolgozok-szama-gyakorlati-helyenkent', [DolgozokController::class, 'getDolgozokSzamaGyakorlatiHelyenkent']);
@@ -24,6 +25,7 @@ Route::middleware(['auth:sanctum', Admin::class])
     Route::post('/admin/felvisz-felhasznalo/{name}/{email}/{password}/{level}',[AdminController::class, 'felvitel']);
     Route::put('/admin/modosit/{id}/{szint}',[AdminController::class, 'modositJog']);
 });
+
 
 
 

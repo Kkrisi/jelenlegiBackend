@@ -14,6 +14,15 @@ class DolgozokController extends Controller
         return $query;
     }
 
+    public function DolgozoIdSzerint($id)
+     {
+        $query = DB::table('dolgozo')
+            -> select('*')
+            -> where('d_azon', '=' ,$id)
+            ->get();
+            return $query;
+     }
+
     public function getDolgozokTobbMintEgyKuldottPdf()
     {
         $query = DB::table('dolgozo as d')
@@ -83,4 +92,6 @@ class DolgozokController extends Controller
         $query = DB::table('users')->get();
         return $query;
     }
+
+
 }
