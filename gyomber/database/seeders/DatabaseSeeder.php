@@ -55,5 +55,41 @@ class DatabaseSeeder extends Seeder
             'jogosultsag_azon' => 1, // Ha nem adsz meg jogosultságot, alapértelmezett lesz (felhasználó)
         ]);
 
+
+        /*
+        iskola::create([
+            'nev' => 'Példa Iskola', // A cég neve itt szerepel
+            'web_oldal' => 'http://www.peldaiskola.hu',
+            'kapcsolat_tarto' => 'Nagy Anna', // Kapcsolattartó neve
+        ]);
+        
+        // Gyakorlatihely adat létrehozása
+        gyakorlatihely::create([
+            'ceg_nev' => 'Példa Cég', // A cég neve itt szerepel
+            'web_oldal' => 'http://www.peldaceg.hu',
+            'kapcsolat_tarto' => 'Kiss Péter', // Kapcsolattartó neve
+            'telefonszam' => '06201234567', // Telefonszám
+        ]);
+        */
+        
+
+        /*
+        // Példa dolgozó létrehozása
+        dolgozo::create([
+            'nev' => 'Kovács Péter',
+            'email' => 'kovacs.peter@example.com',
+            'szul_nev' => 'Kovács Anna',
+            'születesi_hely' => 'Budapest',
+            'születesi_ido' => '1990-01-01',
+            'anyaja_neve' => 'Kovács Mária',
+            'taj_szam' => '123456789',
+            'ado_szam' => '987654321',
+            'gondviselo_nev' => 'Kovács István',
+            'telefonszam' => '06201234567',
+            'megjegyzes' => 'Ez egy példa dolgozó.',
+            'iskola_azon' => 1, // Az `iskola` tábla id-ja
+            'gyakhely_azon' => 1, // A `gyakorlatihely` tábla id-ja
+        ]);  */
+
     }
 }
