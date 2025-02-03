@@ -12,15 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kikuldott', function (Blueprint $table) {
-            $table->bigIncrements('kuldott_azon'); // Elsődleges kulcs
-            $table->unsignedBigInteger('penzugy_azon'); // Hivatkozás a pénzügyi táblára
-            $table->string('email'); // A kiküldött email cím
-            $table->string('pdf_fajl_neve'); // A PDF fájl neve, amit kiküldtek
-            $table->dateTime('kuldes_datuma'); // A kiküldés időpontja
+            $table->bigIncrements('kikuldott_azon');
+            $table->unsignedBigInteger('dolgozo_azon');
+            $table->string('pdf_fajl_neve');
+            $table->dateTime('kuldes_datuma');
             $table->timestamps();
         
             // Külső kulcsok
-            $table->foreign('penzugy_azon')->references('penzugy_azon')->on('elokeszites')->onDelete('cascade');
+            $table->foreign('dolgozo_azon')->references('d_azon')->on('dolgozo')->onDelete('cascade');
         });
     }
 

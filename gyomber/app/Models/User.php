@@ -50,12 +50,4 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-
-
-    
-    // Felhasználóhoz tartozó jogosultság
-    public function jogosultsag()
-    {
-        return $this->belongsTo(Jogosultsag::class, 'jogosultsag_azon', 'jog_azon');
-    }
 }

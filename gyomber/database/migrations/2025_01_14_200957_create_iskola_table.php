@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('iskola', function (Blueprint $table) {
-            $table->unsignedBigInteger('isk_azon')->primary(); // Elsődleges kulcs
+            $table->id('isk_azon');
             $table->string('nev');
             $table->string('web_oldal')->nullable();
             $table->string('kapcsolat_tarto');

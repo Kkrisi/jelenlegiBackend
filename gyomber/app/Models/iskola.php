@@ -17,7 +17,7 @@ class iskola extends Model
     ];
 
     // Kapcsolatok a külső táblákhoz
-    public function dolgozok()
+    public function dolgozo()
     {
         return $this->hasMany(Dolgozo::class, 'iskola_azon');
     }

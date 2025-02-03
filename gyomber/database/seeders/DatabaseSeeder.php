@@ -17,33 +17,15 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-
-      
-
-        
-        jogosultsag::create([
-            'jog_azon' => 1,
-            'megnevezes' => 'user', // Alapértelmezett felhasználói jogosultság
-        ]);
-
-        // Először szúrd be a szükséges jogosultságot a jogosultsags táblába
-        jogosultsag::create([
-            'jog_azon' => 2,
-            'megnevezes' => 'superadmin',
-        ]);
-        
-         
-        
         
         
 
-        
         // Ezután szúrj be felhasználókat
          User::create([
              'email' => 'admin@gmail.com',
              'password' => Hash::make('adminpassword'),
              'name' => 'Admin User',
-             'jogosultsag_azon' => 2, // Hivatkozás a 'ssuperadmin' jogosultságra
+             'jogosultsag_azon' => 2,
          ]);
          
         
@@ -52,7 +34,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'user@gmail.com',
             'password' => Hash::make('securepassword'),
             'name' => 'Test User',
-            'jogosultsag_azon' => 1, // Ha nem adsz meg jogosultságot, alapértelmezett lesz (felhasználó)
+            'jogosultsag_azon' => 1,
         ]);
 
 

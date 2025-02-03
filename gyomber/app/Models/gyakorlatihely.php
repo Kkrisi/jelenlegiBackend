@@ -19,7 +19,7 @@ class gyakorlatihely extends Model
 
 
     // Kapcsolatok a külső táblákhoz
-    public function dolgozok()
+    public function dolgozo()
     {
         return $this->hasMany(dolgozo::class, 'gyakhely_azon');
     }

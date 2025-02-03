@@ -34,11 +34,6 @@ class dolgozo extends Model
         return $this->belongsTo(Iskola::class, 'iskola_azon');
     }
 
-    public function csoport()
-    {
-        return $this->belongsTo(Csoport::class, 'csoport_azon');
-    }
-
     public function gyakhely()
     {
         return $this->belongsTo(Gyakorlatihely::class, 'gyakhely_azon');

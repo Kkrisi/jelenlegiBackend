@@ -23,9 +23,4 @@ class kikuldott extends Model
     {
         return $this->belongsTo(Kikuldes::class, 'kikuldes_azon');
     }
-
-    public function penzugy()
-    {
-        return $this->belongsTo(Penzugy::class, 'penzugy_azon');
-    }
 }
