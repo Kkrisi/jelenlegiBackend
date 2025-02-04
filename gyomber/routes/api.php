@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CsvController;
 use App\Http\Controllers\DolgozokController;
 use App\Http\Middleware\Admin;
 use Illuminate\Http\Request;
@@ -37,3 +38,4 @@ Route::middleware(['auth:sanctum', Admin::class])
 
 
 
+Route::post('/save-json-to-database', [CsvController::class, 'saveJsonToDatabase']);
