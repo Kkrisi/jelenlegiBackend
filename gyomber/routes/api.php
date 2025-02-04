@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', Admin::class])
 });
 
 Route::post('/register', [RegistrationController::class, 'register']);
-
+ //teszt
 
 
 Route::post('/save-json-to-database', [CsvController::class, 'saveJsonToDatabase']);
