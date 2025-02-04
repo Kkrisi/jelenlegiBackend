@@ -34,6 +34,7 @@ Route::middleware(['auth:sanctum', Admin::class])
     Route::put('/admin/modosit/{id}/{szint}',[AdminController::class, 'modositJog']);
 });
 
+Route::post('/register', [RegistrationController::class, 'register']);
 
 
 

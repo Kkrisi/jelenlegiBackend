@@ -12,4 +12,9 @@ class UserController extends Controller
         $query = DB::table('users')->get();
         return $query;
     }
+    //*TODO loginra is ide valamit*//
+    public function register()
+    {
+        
+    }
 }
