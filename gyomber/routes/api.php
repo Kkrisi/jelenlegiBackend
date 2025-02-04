@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CsvController;
 use App\Http\Controllers\DolgozokController;
 use App\Http\Middleware\Admin;
 use Illuminate\Http\Request;
@@ -38,3 +39,4 @@ Route::post('/register', [RegistrationController::class, 'register']);
 
 
 
+Route::post('/save-json-to-database', [CsvController::class, 'saveJsonToDatabase']);

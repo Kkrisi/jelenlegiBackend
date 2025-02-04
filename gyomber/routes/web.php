@@ -19,7 +19,7 @@ Route::get('/send-mail', [MailController::class, 'index']);
 // feltoltott fajl athelyezes backendre // ez kell hozzá !!!! php artisan storage:link   !!!
 Route::post('/relocate', [PdfAthelyezController::class, 'relocate']);
 
-Route::post('/save-json-to-database', [CsvController::class, 'saveJsonToDatabase']);
+
 
 
 
