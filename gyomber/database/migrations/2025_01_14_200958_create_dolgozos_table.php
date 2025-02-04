@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dolgozo', function (Blueprint $table) {
+        Schema::create('dolgozos', function (Blueprint $table) {
             $table->unsignedBigInteger('d_azon')->primary(); // Elsődleges kulcs d_azon néven
             $table->string('nev');
             $table->string('email')->unique();
@@ -41,6 +41,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dolgozo');
+        Schema::dropIfExists('dolgozos');
     }
 };

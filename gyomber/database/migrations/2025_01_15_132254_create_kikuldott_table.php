@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
         
             // Külső kulcsok
-            $table->foreign('dolgozo_azon')->references('d_azon')->on('dolgozo')->onDelete('cascade');
+            $table->foreign('dolgozo_azon')->references('d_azon')->on('dolgozos')->onDelete('cascade');
         });
     }
 
