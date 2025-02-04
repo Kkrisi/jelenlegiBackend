@@ -17,5 +17,5 @@ class RegistrationController extends Controller
         'email' => $request->email,
         'password' => Hash::make($request->password),
     ]);
-    return response()->json(['message' => 'Regisztráció sikeres, várunk az engedélyezésre'], 201);
+    return response()->json(['message' => 'Regisztráció sikeres, Admin engedélyére vár'], 201);
 }
